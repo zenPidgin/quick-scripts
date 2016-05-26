@@ -22,3 +22,6 @@ $(".clickMe").on("click", function(){$(this).next("div").slideToggle();});
 */
 var currentYear = (new Date).getFullYear();
 jQuery("#copyYear").text(currentYear);
+
+
+
