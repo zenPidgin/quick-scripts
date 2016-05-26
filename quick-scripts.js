@@ -21,7 +21,7 @@ $(".clickMe").on("click", function(){$(this).next("div").slideToggle();});
 * Use: <span class="info">&copy; <span id="copyYear"></span> by City of Eastvale. </span>
 */
 var currentYear = (new Date).getFullYear();
-jQuery("#copyYear").text(currentYear);
+$("#copyYear").text(currentYear);
 
 
 
