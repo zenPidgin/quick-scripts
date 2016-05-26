@@ -18,7 +18,7 @@ $(".clickMe").on("click", function(){$(this).next("div").slideToggle();});
 * Quick Dynamic Copyright Year
 * 
 * To use, simply add a span with the ID of #copyYear in your footer.
-* Use: <span class="info">&copy; <span id="copyYear"></span> by City of Eastvale. </span>
+* Use: <span class="info">&copy; <span id="copyYear"></span> by {@company}. </span>
 */
 var currentYear = (new Date).getFullYear();
 $("#copyYear").text(currentYear);
