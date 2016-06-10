@@ -8,8 +8,10 @@
        <%# Eval("EventSummary") %>
 </div>
 
-
-
+<!-- Macro Version -->
+<p class="date">
+  {% FormatDateTime(EventDate, "MMMM dd, yyyy") %}
+</p>
 
 
 
