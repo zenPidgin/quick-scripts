@@ -1,6 +1,6 @@
 <!--
 - Copy of a Kentico Repeater Transition for a Newsletter
-- ALl of the Headings were being forced into a serif font, so I used <p> tags
+- All of the Headings were being forced into a serif font, so I used <p> tags
 -->
 
 
