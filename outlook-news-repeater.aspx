@@ -1,6 +1,8 @@
 <!--
 - Copy of a Kentico Repeater Transition for a Newsletter
 - All of the Headings were being forced into a serif font, so I used <p> tags
+- Clarification: The important part of this code is the if statement. 
+- This statement says "if this item is the first one, do this; if not, do that; if it is last, do something else 
 -->
 
 
