@@ -1,7 +1,6 @@
 /*
 * Quick Accordion
-*/
-/*
+*
 * Info: .clickMe is a span, next to a div; when clicked, the div will be opened
 * Ideally, these elements will be wrapped in an <li> or <div> in order to 
 * be their only siblings.
