@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.league-tabs .tabs{
+	background-color: transparent;
+	border: none;
+}
+.league-tabs .tabs span{
+	display:block;
+	float:left;
+	position: relative;
+	display: inline-block;
+	padding: 0.5em 2em 0.5em 1.5em;
+	color: inherit;
+	text-decoration: none;
+	margin: 0 26px 0 0;
+	}
+.league-tabs .tabs span::before {
+    content: '';
+    border-style: solid;
+    border-width: 0 24px 40px 0;
+    border-color: transparent #ffffff transparent transparent;
+    position: absolute;
+    left: -24px;
+    top: 0;
+}
+.league-tabs .tabs span::after {
+    content: '';
+    border-style: solid;
+    border-width: 40px 0 0 24px;
+    border-color: transparent transparent transparent #ffffff;
+    position: absolute;
+    right: -24px;
+    top: 0;
+}
+.league-tabs .tabs span.selected::before{
+    border-color: transparent #2696d3 transparent transparent;
+}
+
+.league-tabs .tabs span.selected::after{
+	border-color: transparent transparent transparent #2696d3;
+} 
+
+.league-tabs .tabs span.first::before{
+	border-color:transparent !important;
+	/* this has an important on it because I can't do first, hover, not whatever */
+}
+.league-tabs #contents a{
+	font-size: 0.8em;
+	color: #c5a02d;
+	font-weight: bold;	
+}
+
+nav.tabs.left{
+	position: relative;
+	z-index: 1;
+	white-space: nowrap;
+	}
+
+.league-tabs .tabs span{
+	background: #fff;
+	}
+.league-tabs .tabs span.selected {
+    color: #fff;
+	background: #2696d3;
+}
+
+/* turning tabs into working tabs */
+
+.league-tabs .tabs span:hover{
+	cursor: pointer;
+	background: #c5a02d; /* gold */
+	color: white;
+}
+.league-tabs .tabs span:hover::before{
+	border-color: transparent #c5a02d transparent transparent;
+}
+.league-tabs .tabs span:hover::after{
+	border-color: transparent transparent transparent #c5a02d;
+}
+#contents{
+	min-height: 180px; /* need to find another fix for this */
+}
+
+#issuesDiv,
+#actionDiv{
+	display:none;
+}
+#contents{
+	position: relative;
+}
+#upcomingDiv,
+#issuesDiv,
+#actionDiv{
+	position:absolute;
+	z-index: 50;
+}
+.topDiv{
+	z-index: 1000 !important;
+	background: white;
+	min-height: 180px;
+	display: block !important;
+}
+</style>
+
+
+</head>
+<body>
+<nav class="tabs left">
+	<span id="upcoming" class="selected first">Upcoming Events</span>
+    <span id="issues">Hot Issues</span>
+	<span id="action">Take Action</span>
+</nav>
+<section id="contents">
+  <div id="upcomingDiv" class="large-up-3">
+    <div class="column">
+      <h4 class="date">Monday, April 4</h4>
+      <h5 class="time">1:10pm</h5>
+      <p class="details">League Event with Long Title that keeps going here</p>
+      <a href="#" class="info">League Offices</a>
+    </div>
+    <div class="column">
+      <h4 class="date">Friday, April 24</h4>
+        <h5 class="time">1:10pm</h5>
+        <p class="details">League Event Title for Cities that have things going on</p>
+        <a href="#" class="info">League Offices</a>
+      </div>
+    <div class="column">
+      <h4 class="date">Monday, April 27</h4>
+      <h5 class="time">1:00pm &ndash; 3:00pm</h5>
+      <p class="details">League Event Title that is shorter</p>
+      <a href="#" class="info">Annual Conference - Exibit Hall B</a>
+    </div>
+  </div>
+  <div id="issuesDiv" class="large-up-3">
+    <div class="column">
+        <h4 class="date">Issue #1</h4>
+        <h5 class="time">Issues Detail</h5>
+        <p class="details">League Issue with Long Title that keeps going here</p>
+        <a href="#" class="info">League Offices</a>
+      </div>
+      <div class="column">
+        <h4 class="date">Issue #2</h4>
+        <h5 class="time">Issues Detail</h5>
+          <p class="details">League Issue Title for Cities that have things going on</p>
+          <a href="#" class="info">League Offices</a>
+        </div>
+      <div class="column">
+        <h4 class="date">Issue #3</h4>
+        <h5 class="time">Issues Detail</h5>
+        <p class="details">League Issue Title that is shorter</p>
+        <a href="#" class="info">Annual Conference - Exibit Hall B</a>
+      </div>
+  </div>
+  <div id="actionDiv" class="large-up-3">
+    <div class="column">
+        <h4 class="date">Action #1</h4>
+        <h5 class="time">Action Detail</h5>
+        <p class="details">League Action with Long Title that keeps going here</p>
+        <a href="#" class="info">League Offices</a>
+      </div>
+      <div class="column">
+        <h4 class="date">Action #2</h4>
+        <h5 class="time">Action Detail</h5>
+          <p class="details">League Action Title for Cities that have things going on</p>
+          <a href="#" class="info">League Offices</a>
+        </div>
+      <div class="column">
+        <h4 class="date">Action #3</h4>
+        <h5 class="time">Action Detail</h5>
+        <p class="details">League Action Title that is shorter</p>
+        <a href="#" class="info">Annual Conference - Exibit Hall B</a>
+      </div>
+  </div>
+</section>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script>
+function revokeTop(){
+	$("#contents div").each(function(){
+		$(this).removeClass("topDiv");
+	});
+}
+function revokeSelected(){
+	$(".league-tabs .tabs span").each(function(){
+		$(this).removeClass("selected");
+	});
+}
+/* not DRY; will convert later */
+$("#issues").on("click", function(){
+	revokeTop();
+	revokeSelected();
+	$(this).addClass("selected");
+	$("#issuesDiv").addClass("topDiv");
+});
+$("#upcoming").on("click", function(){
+	revokeTop();
+	revokeSelected();
+	$(this).addClass("selected");
+	$("#upcomingDiv").addClass("topDiv");
+});
+$("#action").on("click", function(){
+	revokeTop();
+	revokeSelected();
+	$(this).addClass("selected");
+	$("#actionDiv").addClass("topDiv");
+});
+
+</script>
+
+</body>
+</html>
