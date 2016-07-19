@@ -188,6 +188,7 @@ function revokeSelected(){
 	});
 }
 /* not DRY; will convert later */
+/*
 $("#issues").on("click", function(){
 	revokeTop();
 	revokeSelected();
@@ -205,8 +206,16 @@ $("#action").on("click", function(){
 	revokeSelected();
 	$(this).addClass("selected");
 	$("#actionDiv").addClass("topDiv");
+});*/
+/* DRY version  */
+$(".tabs span").on("click", function(){
+	revokeTop();
+	revokeSelected();
+	var div = $(this).attr("id");
+	$(this).addClass("selected")
+	div += "Div";
+	$("#" + div).addClass("topDiv");
 });
-
 </script>
 
 </body>
