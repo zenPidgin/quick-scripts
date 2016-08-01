@@ -15,6 +15,9 @@ function revokeSelected(){
 }
 
 function fixRibbon(){
+	// only works for 1 slide item on load
+	// will not work well for multiple slides
+	// therefore, this is pretty much useless
 	var cHeight = $(".caption").css("height");
 	var nHeight = '<style>';
 	nHeight +=	'.caption::before{border-width: 0px 50px ' ;
