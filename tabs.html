@@ -187,26 +187,7 @@ function revokeSelected(){
 		$(this).removeClass("selected");
 	});
 }
-/* not DRY; will convert later */
-/*
-$("#issues").on("click", function(){
-	revokeTop();
-	revokeSelected();
-	$(this).addClass("selected");
-	$("#issuesDiv").addClass("topDiv");
-});
-$("#upcoming").on("click", function(){
-	revokeTop();
-	revokeSelected();
-	$(this).addClass("selected");
-	$("#upcomingDiv").addClass("topDiv");
-});
-$("#action").on("click", function(){
-	revokeTop();
-	revokeSelected();
-	$(this).addClass("selected");
-	$("#actionDiv").addClass("topDiv");
-});*/
+
 /* DRY version  */
 $(".tabs span").on("click", function(){
 	revokeTop();
