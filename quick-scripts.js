@@ -26,4 +26,10 @@ var currentYear = (new Date).getFullYear();
 $("#copyYear").text(currentYear);
 
 
+/*
+* PDF Links - add icon
+*/
+(function(){
+	$('a[href$=".pdf"]').prepend('<span class="glyphicon glyphicon-file" aria-hidden="true"></span>');
+})();
 
