@@ -1,0 +1,45 @@
+ <div class="col-lg-3 sidebar">
+      [sibling-pages]
+    </div>
+<div class="col-lg-9">
+	<h1>{@post_title}</h1>
+	<!--<div class="row">-->
+		<div class="col-lg-8">
+			<table>
+				<tbody>
+					
+					<tr>
+						<th scope="row">Manufacturer&nbsp;</th>
+						<td>{@manufacturer}</td>
+					</tr>
+					<tr>
+						<th scope="row">Color Name&nbsp;</th>
+						<td>{@color_name}</td>
+					</tr>
+					<tr>
+						<th scope="row">Color Number&nbsp;</th>
+						<td>{@color_number}</td>
+					</tr>
+					<tr>
+						<th scope="row">Material&nbsp;</th>
+						<td>{@material}</td>
+					</tr>
+					
+					
+				</tbody>
+			</table>
+		</div>
+		<div class="col-lg-4">
+			<img src="{@thumbnail_1}" alt="{@post-title}" />
+			[if thumbnail_2]
+				<img src="{@thumbnail_2}" alt="{@post-title}" />
+			[/if]
+			[if thumbnail_3]
+				<img src="{@thumbnail_3}" alt="{@post-title}" />
+			[/if]
+			[if thumbnail_4]
+				<img src="{@thumbnail_4}" alt="{@post-title}" />
+			[/if]
+		</div>
+	<!--</div>-->
+</div>
