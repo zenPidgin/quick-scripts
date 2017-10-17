@@ -33,3 +33,8 @@ $("#copyYear").text(currentYear);
 	$('a[href$=".pdf"]').prepend('<span class="glyphicon glyphicon-file" aria-hidden="true"></span>');
 })();
 
+/*
+* Return to the previous page function for links
+* Usage: <a href="javascript:history.back();">Return</a>
+*/
+javascript:history.back();
